@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+.player-container {
+  background: #111;
+  color: white;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+
+.player-container h2 {
+  margin-bottom: 10px;
+}
+
+#cover {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 28px;
+}
+
+.controls button {
+  background: linear-gradient(90deg,#ff8c00,#ff0080);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5em;
+  padding: 18px;
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(255,0,128,0.18);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.controls button:hover {
+  background: linear-gradient(90deg,#00c6ff,#0072ff);
+  transform: scale(1.18) rotate(-6deg);
+  box-shadow: 0 12px 48px rgba(0,198,255,0.22);
+}
+
+.progress-container {
+  margin: 15px 0;
+}
+
+#progress {
+  width: 100%;
+}
+
+.volume-container {
+  margin: 10px 0;
+}
+
+.options button, .upload-btn {
+  background: #222;
+  border: none;
+  color: white;
+  padding: 10px;
+  margin: 5px 0;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.options button:hover, .upload-btn:hover {
+  background: #333;
+}
+
+/* Enhanced Design: Glassmorphism, shadow, animation */
+.music-card {
+  background: rgba(255,255,255,0.28);
+  border-radius: 40px;
+  box-shadow: 0 16px 64px rgba(0,0,0,0.28);
+  padding: 48px 32px;
+  max-width: 480px;
+  width: 100%;
+  backdrop-filter: blur(24px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  border: 2px solid rgba(255,255,255,0.22);
+  animation: fadeInCard 1.2s cubic-bezier(.4,0,.2,1);
+}
+
+@keyframes fadeInCard {
+  from { opacity: 0; transform: translateY(40px) scale(0.96); }
+  to { opacity: 1; transform: none; }
+}
+
+.album-art img {
+  box-shadow: 0 12px 48px rgba(0,0,0,0.28);
+  border: 3px solid rgba(255,255,255,0.22);
+  animation: rotateArt 6s linear infinite;
+  filter: drop-shadow(0 0 24px #ff0080);
+  content: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=320&q=80');
+}
+
+@keyframes rotateArt {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.progress-bar {
+  background: rgba(255,255,255,0.14);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.14);
+  padding: 12px 18px;
+  margin-bottom: 28px;
+}
+
+.playlist-item {
+  background: rgba(255,255,255,0.12);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  transition: background 0.2s, box-shadow 0.2s;
+  font-size: 1.08em;
+}
+
+.playlist-item:hover, .playlist-item.active {
+  background: linear-gradient(90deg,#ff8c00,#ff0080 80%);
+  color: #fff;
+  box-shadow: 0 8px 32px rgba(255,0,128,0.22);
+}
+
+.theme-toggle {
+  top: 32px;
+  right: 32px;
+  font-size: 1.7em;
+  padding: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.22);
+}
+
+.upload-section {
+  margin-bottom: 32px;
+}
+
+#upload-btn {
+  font-size: 1.2em;
+  padding: 16px 36px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(255,0,128,0.18);
+}
+
+.toast {
+  font-size: 1.2em;
+  padding: 20px 40px;
+  border-radius: 20px;
+}
+
+@media (max-width: 600px) {
+  .music-card {
+    max-width: 98vw;
+    padding: 24px 2vw;
+  }
+  .album-art {
+    width: 98vw;
+    height: 98vw;
+    max-width: 320px;
+    max-height: 320px;
+  }
+}
